@@ -1,0 +1,32 @@
+name: Actualizar una plataforma
+description: Informar un cambio verificable en una política oficial.
+title: "[plataforma] "
+labels: ["data", "needs-verification"]
+body:
+  - type: input
+    id: platform
+    attributes:
+      label: Plataforma
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: URL oficial
+      description: Solo se aceptan páginas controladas por la plataforma.
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Cambio observado
+      description: No incluyas nombres, correos, documentos, números de cuenta ni datos de un caso real.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacidad
+      options:
+        - label: Confirmo que no incluí datos personales ni documentos sensibles.
+          required: true

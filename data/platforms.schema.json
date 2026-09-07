@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/legado-digital-abierto/platforms.schema.json",
+  "title": "Legado Digital Abierto dataset",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "language", "lastDatasetReview", "disclaimer", "actionDefinitions", "platforms"],
+  "properties": {
+    "version": { "type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$" },
+    "language": { "const": "es" },
+    "lastDatasetReview": { "type": "string", "format": "date" },
+    "disclaimer": { "type": "string", "minLength": 30 },
+    "actionDefinitions": {
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": { "pattern": "^[a-z-]+$" },
+      "additionalProperties": { "type": "string", "minLength": 3 }
+    },
+    "platforms": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/platform" }
+    }
+  },
+  "$defs": {
+    "nonEmptyStrings": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "type": "string", "minLength": 3 }
+    },
+    "platform": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "name", "category", "summary", "regionNote", "actions", "eligibleRequesters", "requirements", "steps", "warnings", "officialSource", "verification"],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string", "minLength": 1 },
+        "category": { "type": "string", "minLength": 3 },
+        "summary": { "type": "string", "minLength": 40 },
+        "regionNote": { "type": "string", "minLength": 10 },
+        "actions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["id", "label"],
+            "properties": {
+              "id": { "type": "string", "pattern": "^[a-z-]+$" },
+              "label": { "type": "string", "minLength": 3 }
+            }
+          }
+        },
+        "eligibleRequesters": { "$ref": "#/$defs/nonEmptyStrings" },
+        "requirements": { "$ref": "#/$defs/nonEmptyStrings" },
+        "steps": { "$ref": "#/$defs/nonEmptyStrings" },
+        "warnings": { "$ref": "#/$defs/nonEmptyStrings" },
+        "officialSource": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "url", "language"],
+          "properties": {
+            "title": { "type": "string", "minLength": 5 },
+            "url": { "type": "string", "format": "uri", "pattern": "^https://" },
+            "language": { "type": "string", "pattern": "^[a-z]{2}$" }
+          }
+        },
+        "verification": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "reviewedAt", "sourceType"],
+          "properties": {
+            "status": { "enum": ["verified", "unverified"] },
+            "reviewedAt": { "type": "string", "format": "date" },
+            "sourceType": { "const": "official" }
+          }
+        }
+      }
+    }
+  }
+}

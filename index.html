@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guía abierta y verificable de trámites oficiales para gestionar cuentas digitales de personas fallecidas.">
+  <meta name="theme-color" content="#163b35">
+  <title>Legado Digital Abierto</title>
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Legado Digital Abierto, inicio">
+      <span class="brand-mark" aria-hidden="true">LD</span>
+      <span>Legado Digital Abierto</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#directorio">Directorio</a>
+      <a href="#lista">Mi lista</a>
+      <a href="#metodologia">Metodología</a>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Información oficial, reunida con cuidado</p>
+        <h1 id="hero-title">Gestionar una cuenta digital después de una pérdida no debería empezar con desinformación.</h1>
+        <p class="lead">Consulta qué permite cada plataforma, quién puede solicitarlo y qué documentos suele exigir. Cada ficha enlaza a su fuente oficial y muestra cuándo fue revisada.</p>
+        <a class="button primary" href="#directorio">Consultar plataformas</a>
+      </div>
+      <aside class="safety-card" aria-labelledby="safety-title">
+        <p class="eyebrow">Antes de continuar</p>
+        <h2 id="safety-title">No compartas documentos aquí</h2>
+        <p>Este sitio no recibe contraseñas, certificados, identificaciones ni solicitudes. Prepara los documentos únicamente en la página oficial de la plataforma.</p>
+      </aside>
+    </section>
+
+    <section class="trust-strip" aria-label="Principios del servicio">
+      <div><strong>Sin cuentas</strong><span>No necesitas registrarte</span></div>
+      <div><strong>Sin rastreo</strong><span>No enviamos datos personales</span></div>
+      <div><strong>Fuentes oficiales</strong><span>Cada afirmación es revisable</span></div>
+      <div><strong>Datos abiertos</strong><span>Las correcciones quedan versionadas</span></div>
+    </section>
+
+    <section class="directory section" id="directorio" aria-labelledby="directory-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Directorio inicial</p>
+          <h2 id="directory-title">Encuentra la política aplicable</h2>
+        </div>
+        <p id="dataset-status" class="dataset-status" aria-live="polite">Cargando fuentes…</p>
+      </div>
+
+      <form class="filters" id="filters" role="search">
+        <label class="search-field" for="search">
+          <span>Buscar plataforma o trámite</span>
+          <input id="search" name="search" type="search" autocomplete="off" placeholder="Ejemplo: Google, eliminar, acceder">
+        </label>
+        <label for="action-filter">
+          <span>Acción</span>
+          <select id="action-filter" name="action">
+            <option value="all">Todas las acciones</option>
+          </select>
+        </label>
+        <button class="button secondary" id="clear-filters" type="reset">Limpiar</button>
+      </form>
+
+      <p id="results-summary" class="results-summary" aria-live="polite"></p>
+      <div id="platform-grid" class="platform-grid"></div>
+      <div id="empty-state" class="empty-state" hidden>
+        <h3>No encontramos una coincidencia</h3>
+        <p>Prueba con el nombre de la plataforma o una acción como “eliminar” o “acceder”.</p>
+      </div>
+      <noscript>
+        <p class="error-message">Este directorio necesita JavaScript para cargar y filtrar las fichas. Los datos siguen disponibles en <a href="data/platforms.es.json">formato JSON</a>.</p>
+      </noscript>
+    </section>
+
+    <section class="checklist section" id="lista" aria-labelledby="checklist-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">Preparación local</p>
+          <h2 id="checklist-title">Mi lista imprimible</h2>
+        </div>
+        <button class="button primary" id="print-list" type="button">Imprimir lista</button>
+      </div>
+      <p class="privacy-note">Tu selección se guarda solo en este navegador. No escribas nombres, correos ni datos del caso.</p>
+      <div id="checklist-content" class="checklist-content" aria-live="polite">
+        <p>Añade plataformas desde el directorio para preparar una lista.</p>
+      </div>
+    </section>
+
+    <section class="method section" id="metodologia" aria-labelledby="method-title">
+      <div>
+        <p class="eyebrow">Cómo se mantiene</p>
+        <h2 id="method-title">Resumen propio, fuente oficial y fecha visible</h2>
+      </div>
+      <ol>
+        <li>Revisamos únicamente páginas oficiales de cada plataforma.</li>
+        <li>Resumimos sin copiar extensamente y sin interpretar requisitos legales.</li>
+        <li>Registramos región, advertencias y fecha de revisión.</li>
+        <li>Si la fuente falla o es ambigua, la ficha deja de considerarse verificada.</li>
+      </ol>
+      <p><a href="METHODOLOGY.md">Leer metodología completa</a> · <a href="CONTRIBUTING.md">Proponer una corrección</a> · <a href="data/platforms.es.json">Descargar los datos</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>Legado Digital Abierto</strong> es informativo y no ofrece asesoría legal ni garantiza que una plataforma apruebe una solicitud.</p>
+    <p><a href="PRIVACY.md">Privacidad</a> · <a href="SECURITY.md">Seguridad</a> · <a href="LICENSE-DATA.md">Licencia de datos</a></p>
+  </footer>
+
+  <template id="platform-card-template">
+    <article class="platform-card">
+      <div class="card-topline">
+        <span class="category"></span>
+        <span class="verification-badge"></span>
+      </div>
+      <h3></h3>
+      <p class="summary"></p>
+      <div class="action-tags" aria-label="Acciones disponibles"></div>
+      <p class="region-note"></p>
+      <details>
+        <summary>Ver requisitos y pasos</summary>
+        <div class="detail-content"></div>
+      </details>
+      <div class="card-footer">
+        <a class="official-link" target="_blank" rel="noopener noreferrer">Abrir fuente oficial</a>
+        <button class="checklist-toggle" type="button"></button>
+      </div>
+      <p class="review-date"></p>
+    </article>
+  </template>
+</body>
+</html>

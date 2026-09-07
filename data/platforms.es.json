@@ -1,0 +1,380 @@
+{
+  "version": "1.0.0",
+  "language": "es",
+  "lastDatasetReview": "2026-09-07",
+  "disclaimer": "Información general basada en fuentes oficiales. No constituye asesoría legal ni garantiza el resultado de una solicitud.",
+  "actionDefinitions": {
+    "access": "Solicitar acceso o contenido",
+    "billing": "Cancelar facturación",
+    "close": "Cerrar cuenta",
+    "deactivate": "Desactivar cuenta",
+    "delete": "Eliminar cuenta",
+    "funds": "Gestionar fondos o saldo",
+    "memorialize": "Convertir en conmemorativa",
+    "other": "Otra solicitud autorizada",
+    "transfer": "Transferir contenido"
+  },
+  "platforms": [
+    {
+      "id": "apple",
+      "name": "Apple",
+      "category": "Cuenta y almacenamiento",
+      "summary": "Apple permite solicitar acceso limitado o eliminación. Un contacto para legado con clave de acceso tiene la ruta más directa; sin esa clave pueden exigirse documentos legales adicionales.",
+      "regionNote": "Global, con requisitos legales variables por país o región.",
+      "actions": [
+        { "id": "access", "label": "Solicitar acceso" },
+        { "id": "delete", "label": "Solicitar eliminación" }
+      ],
+      "eligibleRequesters": [
+        "Contacto para legado designado por el titular.",
+        "Representante legal, heredero o familiar que cumpla los requisitos de su jurisdicción."
+      ],
+      "requirements": [
+        "Clave de acceso del contacto para legado y certificado de defunción, si existe esa designación.",
+        "Para otras rutas: certificado de defunción y posible orden judicial u otra documentación legal aceptada en la región.",
+        "Cuenta Apple propia para ciertas solicitudes de eliminación."
+      ],
+      "steps": [
+        "Confirma si existe una clave de contacto para legado.",
+        "Revisa en la fuente oficial la ruta y los documentos aplicables a tu país.",
+        "Inicia la solicitud únicamente en el sitio de Legado Digital de Apple o con Soporte de Apple."
+      ],
+      "warnings": [
+        "Apple no puede desbloquear un dispositivo protegido por código sin borrarlo.",
+        "Algunos datos cifrados de extremo a extremo y compras no pueden entregarse.",
+        "No compartas la clave de acceso fuera del proceso oficial."
+      ],
+      "officialSource": {
+        "title": "Request access to a deceased family member’s Apple Account",
+        "url": "https://support.apple.com/en-la/102431",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "google",
+      "name": "Google",
+      "category": "Cuenta, correo y archivos",
+      "summary": "Google recibe solicitudes para cerrar una cuenta, solicitar fondos o, en ciertas circunstancias, obtener contenido. Cada caso se revisa y Google no entrega contraseñas.",
+      "regionNote": "Proceso global; la documentación y el resultado dependen del caso y la jurisdicción.",
+      "actions": [
+        { "id": "close", "label": "Cerrar cuenta" },
+        { "id": "access", "label": "Solicitar contenido" },
+        { "id": "funds", "label": "Solicitar fondos" }
+      ],
+      "eligibleRequesters": [
+        "Familiares directos.",
+        "Representantes legales de la persona fallecida."
+      ],
+      "requirements": [
+        "Identificación y datos de contacto del solicitante.",
+        "Información de la persona fallecida y de su cuenta.",
+        "Prueba de fallecimiento y documentación adicional solicitada durante la revisión."
+      ],
+      "steps": [
+        "Elige en el formulario oficial si buscas cerrar la cuenta, solicitar fondos u obtener datos.",
+        "Lee las consecuencias antes de cerrar: luego no se puede pedir el contenido de esa cuenta.",
+        "Envía la documentación solamente mediante el flujo oficial de Google."
+      ],
+      "warnings": [
+        "Google no proporciona contraseñas ni datos de acceso.",
+        "La entrega de contenido no está garantizada.",
+        "Solicitar el cierre antes de terminar una petición de contenido puede impedir recuperarlo."
+      ],
+      "officialSource": {
+        "title": "Submit a request regarding a deceased user's account",
+        "url": "https://support.google.com/accounts/troubleshooter/6357590?hl=en",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "category": "Red social",
+      "summary": "Facebook permite convertir un perfil en conmemorativo o solicitar su eliminación. El acceso al perfil conmemorativo queda bloqueado y un contacto de legado solo tiene funciones limitadas.",
+      "regionNote": "Disponible en las regiones donde opera Facebook; los documentos pueden variar.",
+      "actions": [
+        { "id": "memorialize", "label": "Convertir en conmemorativa" },
+        { "id": "delete", "label": "Solicitar eliminación" }
+      ],
+      "eligibleRequesters": [
+        "Una persona que informe el fallecimiento y aporte prueba válida para conmemorar.",
+        "Familiar directo verificado o representante autorizado para solicitar eliminación.",
+        "Contacto de legado previamente designado para funciones limitadas tras la conmemoración."
+      ],
+      "requirements": [
+        "Enlace del perfil y datos de la persona fallecida.",
+        "Prueba de fallecimiento, como certificado, obituario u otra evidencia aceptada.",
+        "Para eliminación, prueba de parentesco directo o autoridad legal cuando Facebook la solicite."
+      ],
+      "steps": [
+        "Decide entre conservar el perfil como conmemorativo o pedir su eliminación.",
+        "Abre desde la ayuda oficial el formulario correspondiente.",
+        "Entrega documentos solo en el formulario de Facebook."
+      ],
+      "warnings": [
+        "Nadie puede iniciar sesión en una cuenta conmemorativa.",
+        "Un contacto de legado no puede leer mensajes ni editar publicaciones anteriores.",
+        "La eliminación es distinta de la conmemoración y exige mayor autoridad."
+      ],
+      "officialSource": {
+        "title": "Solicitar que una cuenta se convierta en conmemorativa o se elimine",
+        "url": "https://www.facebook.com/help/1111566045566400?locale=es_LA",
+        "language": "es"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft",
+      "category": "Correo, cuenta y almacenamiento",
+      "summary": "Microsoft generalmente no entrega información a terceros. Sin acceso existente, una solicitud de contenido suele requerir una citación u orden judicial válida, con excepciones regionales.",
+      "regionNote": "Global, con rutas específicas para Alemania, China y otras jurisdicciones.",
+      "actions": [
+        { "id": "access", "label": "Solicitar acceso legal" },
+        { "id": "billing", "label": "Detener suscripciones" },
+        { "id": "close", "label": "Cierre por inactividad" }
+      ],
+      "eligibleRequesters": [
+        "Representante legal que pueda obtener y notificar una orden judicial válida.",
+        "Herederos que cumplan la ruta regional especial indicada por Microsoft."
+      ],
+      "requirements": [
+        "Orden judicial o citación válida para solicitudes de contenido en la ruta general.",
+        "Prueba de fallecimiento, identidad y sucesión para rutas regionales que lo permitan.",
+        "Datos del servicio y de la cuenta involucrada."
+      ],
+      "steps": [
+        "Revisa primero la sección regional de la política oficial.",
+        "Cancela suscripciones mediante el banco o emisor de la tarjeta cuando no tengas acceso.",
+        "Busca orientación legal local antes de intentar una solicitud judicial de contenido."
+      ],
+      "warnings": [
+        "Microsoft indica que no es necesario avisarle del fallecimiento para el cierre automático.",
+        "Las cuentas pueden cerrarse tras dos años de inactividad; OneDrive y correo tienen plazos propios.",
+        "Esta guía no sustituye asesoría jurídica sobre órdenes judiciales."
+      ],
+      "officialSource": {
+        "title": "Accessing Outlook.com, OneDrive and other Microsoft services when someone has died",
+        "url": "https://support.microsoft.com/en-us/accounts-billing/manage/accessing-outlook-com-onedrive-and-other-microsoft-services-when-someone-has-died",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "github",
+      "name": "GitHub",
+      "category": "Código y repositorios",
+      "summary": "GitHub trabaja con personas autorizadas para decidir qué ocurre con el contenido de una cuenta, incluido transferir repositorios públicos o cancelar cobros.",
+      "regionNote": "Política global de GitHub; pueden aplicar requisitos legales locales.",
+      "actions": [
+        { "id": "transfer", "label": "Transferir repositorios públicos" },
+        { "id": "billing", "label": "Cancelar facturación" },
+        { "id": "other", "label": "Otra solicitud autorizada" }
+      ],
+      "eligibleRequesters": [
+        "Familiar más cercano.",
+        "Sucesor previamente designado en GitHub.",
+        "Otra persona autorizada, como colaborador o socio comercial, según el caso."
+      ],
+      "requirements": [
+        "Nombre y datos de contacto del solicitante.",
+        "Nombre y usuario de GitHub de la persona fallecida.",
+        "Relación con el titular y acción solicitada.",
+        "Posible identificación, certificado de defunción y prueba de autorización si GitHub los pide."
+      ],
+      "steps": [
+        "Abre el portal de Soporte de GitHub desde la política oficial.",
+        "Describe tu relación y la acción concreta que solicitas.",
+        "Espera la petición de documentos adicionales antes de enviar material sensible."
+      ],
+      "warnings": [
+        "GitHub decide qué información adicional necesita después de recibir la solicitud.",
+        "No envíes documentos a repositorios, issues ni direcciones no indicadas por Soporte.",
+        "Los repositorios públicos ya pueden clonarse sin solicitar acceso a la cuenta."
+      ],
+      "officialSource": {
+        "title": "GitHub Deceased User Policy",
+        "url": "https://docs.github.com/en/site-policy/other-site-policies/github-deceased-user-policy",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "linkedin",
+      "name": "LinkedIn",
+      "category": "Red profesional",
+      "summary": "LinkedIn permite informar un fallecimiento para conmemorar un perfil. Solo una persona autorizada, con documentación legal aceptada, puede solicitar el cierre.",
+      "regionNote": "Proceso general de LinkedIn; la ayuda enlazada está disponible en español.",
+      "actions": [
+        { "id": "memorialize", "label": "Convertir en conmemorativa" },
+        { "id": "close", "label": "Cerrar cuenta" }
+      ],
+      "eligibleRequesters": [
+        "Cualquier persona con información suficiente puede informar el fallecimiento para conmemorar.",
+        "Representante autorizado por tribunal para solicitar el cierre."
+      ],
+      "requirements": [
+        "Nombre completo y URL del perfil.",
+        "Relación, correo del miembro, fecha de fallecimiento y enlace a obituario o noticia.",
+        "Para cierre: documento judicial que designe al solicitante como representante autorizado."
+      ],
+      "steps": [
+        "Elige si vas a informar para conmemorar o, con autoridad legal, solicitar cierre.",
+        "Reúne únicamente los datos y documentos que LinkedIn enumera como aceptados.",
+        "Usa el enlace de contacto incluido en la ayuda oficial."
+      ],
+      "warnings": [
+        "LinkedIn no revela nombres de usuario ni contraseñas.",
+        "Testamentos, poderes y documentos de identidad por sí solos pueden no ser aceptados para el cierre.",
+        "La cuenta conmemorativa queda bloqueada para iniciar sesión."
+      ],
+      "officialSource": {
+        "title": "Convertir en conmemorativa la cuenta de un miembro fallecido o cerrarla",
+        "url": "https://www.linkedin.com/help/linkedin/answer/a1336663/conmemorar-o-cerrar-la-cuenta-de-un-miembro-fallecido?lang=es",
+        "language": "es"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "x",
+      "name": "X",
+      "category": "Red social",
+      "summary": "X permite a un representante del patrimonio o familiar directo verificado solicitar la desactivación. No entrega acceso a la cuenta.",
+      "regionNote": "Proceso general de X; el formulario y la política están en inglés.",
+      "actions": [
+        { "id": "deactivate", "label": "Solicitar desactivación" }
+      ],
+      "eligibleRequesters": [
+        "Persona autorizada para actuar por el patrimonio.",
+        "Familiar directo verificado."
+      ],
+      "requirements": [
+        "Datos del solicitante y de la cuenta.",
+        "Copia de identificación del solicitante.",
+        "Copia del certificado de defunción cuando X envíe las instrucciones."
+      ],
+      "steps": [
+        "Abre el formulario oficial de desactivación desde la política.",
+        "Envía la solicitud inicial con los datos básicos.",
+        "Sigue el correo de X para aportar los documentos por el canal indicado."
+      ],
+      "warnings": [
+        "X no proporciona acceso a la cuenta a ninguna persona.",
+        "La política indica que la documentación se elimina después de revisarla.",
+        "Usa solo el formulario enlazado desde help.x.com."
+      ],
+      "officialSource": {
+        "title": "How to contact X about a deceased family member's account",
+        "url": "https://help.x.com/en/rules-and-policies/contact-x-about-a-deceased-family-members-account",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "dropbox",
+      "name": "Dropbox",
+      "category": "Almacenamiento de archivos",
+      "summary": "Dropbox acepta solicitudes de acceso a archivos, pero exige demostrar el fallecimiento y un derecho legal; normalmente pide una orden judicial específica y no garantiza el acceso.",
+      "regionNote": "Política general para usuarios de Dropbox; la validez de la orden depende de la jurisdicción.",
+      "actions": [
+        { "id": "access", "label": "Solicitar acceso a archivos" }
+      ],
+      "eligibleRequesters": [
+        "Persona con derecho legal a acceder a los archivos conforme a la ley aplicable."
+      ],
+      "requirements": [
+        "Nombre completo y correo de la cuenta de la persona fallecida.",
+        "Datos de contacto, relación e identificación oficial del solicitante.",
+        "Orden judicial válida que establezca la intención de dar acceso y obligue legalmente a Dropbox."
+      ],
+      "steps": [
+        "Comprueba primero si existe una carpeta de Dropbox ya sincronizada en un equipo al que puedas acceder legalmente.",
+        "Si necesitas pedir acceso, revisa todos los requisitos de la fuente oficial.",
+        "Crea un ticket de soporte y entrega los documentos únicamente por el canal indicado."
+      ],
+      "warnings": [
+        "Dropbox no garantiza que concederá acceso.",
+        "La orden judicial debe contener elementos específicos; busca orientación legal local.",
+        "No intentes iniciar sesión usando credenciales que no te pertenezcan."
+      ],
+      "officialSource": {
+        "title": "How to access the Dropbox account of someone who has passed away",
+        "url": "https://help.dropbox.com/account-settings/access-account-of-someone-who-passed-away",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "paypal-us",
+      "name": "PayPal (Estados Unidos)",
+      "category": "Pagos y saldo",
+      "summary": "PayPal Estados Unidos solo acepta instrucciones del albacea o administrador autorizado para cerrar o bloquear una cuenta y resolver el saldo restante.",
+      "regionNote": "Solo Estados Unidos. No uses estos requisitos para una cuenta de otro país.",
+      "actions": [
+        { "id": "close", "label": "Cerrar o bloquear cuenta" },
+        { "id": "funds", "label": "Gestionar saldo" }
+      ],
+      "eligibleRequesters": [
+        "Albacea o administrador autorizado del patrimonio de la persona fallecida."
+      ],
+      "requirements": [
+        "Carta de solicitud que identifique la cuenta por su correo principal.",
+        "Certificado de defunción e identificación oficial del solicitante.",
+        "Documento legal o testamento que identifique al albacea; documentación estatal si no existe testamento.",
+        "Formulario W-9 del patrimonio, según la política de Estados Unidos."
+      ],
+      "steps": [
+        "Confirma que la cuenta corresponde a Estados Unidos.",
+        "Revisa la lista vigente y las instrucciones de envío en la fuente oficial.",
+        "Indica cómo debe gestionarse cualquier saldo dentro de las opciones permitidas."
+      ],
+      "warnings": [
+        "Los requisitos cambian por país; esta ficha no cubre cuentas fuera de Estados Unidos.",
+        "PayPal no devuelve documentos enviados por correo postal.",
+        "No envíes documentos a correos o direcciones copiados de sitios no oficiales."
+      ],
+      "officialSource": {
+        "title": "How do I close the PayPal account of a deceased relative?",
+        "url": "https://securepayments.paypal.com/us/cshelp/article/how-do-i-close-the-paypal-account-of-a-deceased-relative-help220",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    },
+    {
+      "id": "pinterest",
+      "name": "Pinterest",
+      "category": "Red social y colecciones",
+      "summary": "Pinterest permite que un familiar solicite eliminar la cuenta de una persona fallecida aportando una verificación como obituario o certificado de defunción.",
+      "regionNote": "Proceso general de Pinterest; el formulario de contacto puede variar por región.",
+      "actions": [
+        { "id": "delete", "label": "Solicitar eliminación" }
+      ],
+      "eligibleRequesters": [
+        "Familiar de la persona fallecida."
+      ],
+      "requirements": [
+        "Datos que permitan identificar la cuenta.",
+        "Verificación del fallecimiento, como obituario o certificado de defunción.",
+        "Información adicional que Pinterest solicite en el contacto."
+      ],
+      "steps": [
+        "Abre la sección “Delete a deceased person's account” de la ayuda oficial.",
+        "Usa el enlace de contacto mostrado por Pinterest.",
+        "Aporta la verificación solo dentro del canal oficial."
+      ],
+      "warnings": [
+        "Una vez eliminada, la cuenta deja de ser accesible.",
+        "Pinterest no entrega información personal ni datos de acceso.",
+        "La página también contiene instrucciones ordinarias de cierre; usa la sección específica para personas fallecidas."
+      ],
+      "officialSource": {
+        "title": "Delete or temporarily deactivate your account — deceased person's account",
+        "url": "https://help.pinterest.com/en/article/deactivate-or-close-your-account",
+        "language": "en"
+      },
+      "verification": { "status": "verified", "reviewedAt": "2026-09-07", "sourceType": "official" }
+    }
+  ]
+}
