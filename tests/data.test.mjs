@@ -16,7 +16,7 @@ const allowedHosts = new Set([
   "www.linkedin.com",
   "help.x.com",
   "help.dropbox.com",
-  "securepayments.paypal.com",
+  "www.paypal.com",
   "help.pinterest.com"
 ]);
 

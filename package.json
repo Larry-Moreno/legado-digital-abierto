@@ -1,6 +1,6 @@
 {
   "name": "legado-digital-abierto",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "private": true,
   "description": "Directorio abierto de procedimientos oficiales para cuentas digitales de personas fallecidas.",
   "homepage": "https://larry-moreno.github.io/legado-digital-abierto/",
@@ -17,11 +17,18 @@
   },
   "scripts": {
     "start": "node scripts/serve.mjs",
+    "preview": "node scripts/serve.mjs --docs",
     "build": "node scripts/build.mjs",
-    "check:syntax": "node --check app.js && node --check scripts/build.mjs && node --check scripts/check-links.mjs && node --check scripts/serve.mjs",
+    "check:schema": "node scripts/validate-schema.mjs",
+    "check:syntax": "node --check app.js && node --check scripts/build.mjs && node --check scripts/check-links.mjs && node --check scripts/serve.mjs && node --check scripts/validate-schema.mjs",
     "check:links": "node scripts/check-links.mjs",
-    "test": "node --test tests/*.test.mjs",
-    "check": "npm run check:syntax && npm test && npm run build"
+    "test": "node --test tests/data.test.mjs tests/site.test.mjs",
+    "test:build": "node --test tests/build.test.mjs",
+    "check": "npm run check:syntax && npm run check:schema && npm test && npm run build && npm run test:build"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1"
+  }
 }

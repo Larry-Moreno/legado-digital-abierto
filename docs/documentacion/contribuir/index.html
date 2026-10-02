@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contribuir de Legado Digital Abierto.">
+  <meta name="theme-color" content="#163b35">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Contribuir">
+  <meta property="og:description" content="Contribuir de Legado Digital Abierto.">
+  <meta property="og:url" content="https://larry-moreno.github.io/legado-digital-abierto/documentacion/contribuir/">
+  <title>Contribuir | Legado Digital Abierto</title>
+  <link rel="canonical" href="https://larry-moreno.github.io/legado-digital-abierto/documentacion/contribuir/">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../" aria-label="Legado Digital Abierto, inicio"><span class="brand-mark" aria-hidden="true">LD</span><span>Legado Digital Abierto</span></a>
+    <nav aria-label="Navegación principal"><a href="../../#directorio">Directorio</a><a href="../../#lista">Mi lista</a><a href="../../#metodologia">Metodología</a></nav>
+  </header>
+  <main class="content-page ">
+    <a class="back-link" href="../../">← Volver al directorio</a>
+    <h1>Contribuir</h1>
+<p>Se aceptan correcciones de políticas, nuevas fuentes oficiales, mejoras de accesibilidad, traducciones y pruebas.</p>
+<h2>Regla de privacidad</h2>
+<p>No publiques nombres, correos, usuarios, certificados de defunción, identificaciones, testamentos, números de cuenta, capturas de formularios completados ni detalles de un caso real. Un issue con datos personales debe cerrarse y su contenido debe retirarse mediante las herramientas de moderación de la plataforma.</p>
+<h2>Actualizar una ficha</h2>
+<ol><li>Abre la URL oficial existente y comprueba que sigue vigente.</li><li>Modifica únicamente los campos respaldados por esa fuente.</li><li>Actualiza <code>verification.reviewedAt</code> y <code>lastDatasetReview</code>.</li><li>Mantén el resumen en palabras propias.</li><li>Ejecuta <code>npm install</code>, <code>npm run check</code> y <code>npm run check:links</code>.</li><li>Explica qué cambió y cita la URL oficial en el pull request.</li></ol>
+<h2>Añadir una plataforma</h2>
+<p>Una plataforma nueva debe tener un procedimiento oficial específico para personas fallecidas. No se aceptan instrucciones basadas solo en el cierre ordinario de cuentas, soporte informal o suposiciones legales.</p>
+<p>La propuesta debe incluir una ficha completa conforme a <code>data/platforms.schema.json</code>, una fuente oficial y una región explícita. El mantenedor puede rechazarla si amplía la carga de revisión más allá de lo sostenible.</p>
+<h2>Traducciones</h2>
+<p>Las traducciones deben conservar el significado y los límites regionales. No traduzcas nombres oficiales de documentos como si fueran equivalentes jurídicos entre países.</p>
+<h2>Desarrollo</h2>
+<p>El proyecto no usa dependencias de producción. Las dependencias de desarrollo validan el contrato de datos y no se publican en el sitio. Mantén esa propiedad salvo que una necesidad verificable justifique cambiarla. No agregues analítica, cuentas, formularios, backend ni almacenamiento de documentos.</p>
+<p>Los cambios deben incluir una prueba cuando modifiquen datos, generación de páginas o comportamiento. <code>docs/</code> es el artefacto publicado y debe regenerarse con <code>npm run build</code>.</p><p class="source-note">Documento fuente: <a href="../../CONTRIBUTING.md">CONTRIBUTING.md</a>.</p>
+  </main>
+</body>
+</html>

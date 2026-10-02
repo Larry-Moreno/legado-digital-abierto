@@ -5,7 +5,8 @@ import { createServer } from "node:http";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const projectRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
+const root = process.argv.includes("--docs") ? join(projectRoot, "docs") : projectRoot;
 const port = Number.parseInt(process.env.PORT ?? "4173", 10);
 const types = new Map([
   [".html", "text/html; charset=utf-8"],
@@ -18,14 +19,18 @@ const types = new Map([
 createServer(async (request, response) => {
   const pathname = decodeURIComponent(new URL(request.url, `http://${request.headers.host}`).pathname);
   const requested = pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
-  const file = normalize(join(root, requested));
+  let file = normalize(join(root, requested));
   if (relative(root, file).startsWith("..")) {
     response.writeHead(403).end("Forbidden");
     return;
   }
 
   try {
-    const info = await stat(file);
+    let info = await stat(file);
+    if (info.isDirectory()) {
+      file = join(file, "index.html");
+      info = await stat(file);
+    }
     if (!info.isFile()) throw new Error("Not a file");
     response.writeHead(200, {
       "Content-Type": types.get(extname(file)) ?? "application/octet-stream",

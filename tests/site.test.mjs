@@ -29,7 +29,26 @@ test("la interfaz carga el conjunto versionado y no declara endpoints de envío"
 });
 
 test("existen enlaces visibles a privacidad, seguridad, metodología y contribución", () => {
-  for (const file of ["PRIVACY.md", "SECURITY.md", "METHODOLOGY.md", "CONTRIBUTING.md"]) {
-    assert.match(html, new RegExp(file.replace(".", "\\.")));
+  for (const route of ["documentacion/privacidad/", "documentacion/seguridad/", "documentacion/metodologia/", "documentacion/contribuir/"]) {
+    assert.match(html, new RegExp(route));
   }
+});
+
+test("la página publica metadatos y controles defensivos", () => {
+  assert.match(html, /rel="canonical"/);
+  assert.match(html, /property="og:title"/);
+  assert.match(html, /Content-Security-Policy/);
+  assert.match(html, /name="referrer" content="no-referrer"/);
+});
+
+test("la interfaz enlaza fichas compartibles y reportes de actualización", () => {
+  assert.match(html, /class="permalink"/);
+  assert.match(html, /class="report-link" target="_blank" rel="noopener noreferrer"/);
+  assert.match(app, /issues\/new/);
+  assert.match(app, /single-result/);
+});
+
+test("la navegación móvil permanece disponible y las anclas compensan la cabecera", () => {
+  assert.doesNotMatch(css, /@media \(max-width: 820px\)[\s\S]*?nav\s*\{\s*display:\s*none/);
+  assert.match(css, /scroll-margin-top/);
 });

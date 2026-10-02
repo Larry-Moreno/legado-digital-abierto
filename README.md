@@ -2,6 +2,8 @@
 
 Directorio estático y conjunto de datos abierto sobre los procedimientos oficiales para gestionar cuentas digitales de personas fallecidas.
 
+[Abrir el sitio](https://larry-moreno.github.io/legado-digital-abierto/) · [Ver los datos](data/platforms.es.json) · [Informar una actualización](https://github.com/Larry-Moreno/legado-digital-abierto/issues/new?template=platform-update.yml)
+
 ## Alcance
 
 - Diez plataformas iniciales con fuente oficial y fecha de revisión.
@@ -29,7 +31,15 @@ npm run check
 npm run check:links
 ```
 
-`npm run check` valida sintaxis, datos, controles estáticos de seguridad y accesibilidad, y genera `dist/`. `npm run check:links` consulta las diez fuentes oficiales; respuestas 401, 403, 405 o 429 se registran como bloqueo automatizado y requieren revisión manual.
+`npm run check` valida sintaxis, el JSON Schema real, datos, controles estáticos, documentación generada y las diez fichas enlazables. También genera `docs/`, que es exactamente la carpeta publicada por GitHub Pages. `npm run check:links` consulta las diez fuentes oficiales; respuestas 401, 403, 405 o 429 se registran como bloqueo automatizado y requieren revisión manual.
+
+Para revisar el artefacto publicable:
+
+```bash
+npm run preview
+```
+
+La automatización alojada está temporalmente desactivada porque GitHub no inicia jobs en la cuenta del mantenedor. La validación reproducible vigente es local; no se afirma que exista CI operativa.
 
 ## Estructura
 
@@ -37,8 +47,9 @@ npm run check:links
 data/platforms.es.json       Datos publicados
 data/platforms.schema.json   Contrato del conjunto
 scripts/                     Build, servidor y revisión de enlaces
-tests/                       Pruebas sin dependencias externas
-.github/                     CI y formulario seguro de contribución
+tests/                       Pruebas de datos, interfaz y build público
+docs/                        Artefacto estático publicado por GitHub Pages
+.github/                     Formularios y plantillas de colaboración
 ```
 
 ## Licencias

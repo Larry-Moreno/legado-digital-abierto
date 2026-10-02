@@ -1,0 +1,30 @@
+name: Reportar un problema del sitio
+description: Informar un fallo reproducible sin datos personales.
+title: "[bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problema observado
+      description: Explica qué ocurrió y qué esperabas que ocurriera.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducirlo
+      description: Usa datos ficticios. No adjuntes documentos ni información de un caso real.
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Navegador y versión
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacidad
+      options:
+        - label: Confirmo que no incluí datos personales, documentos, credenciales ni detalles de una persona real.
+          required: true

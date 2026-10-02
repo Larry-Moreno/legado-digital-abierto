@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Seguridad de Legado Digital Abierto.">
+  <meta name="theme-color" content="#163b35">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; base-uri 'none'; form-action 'none'; upgrade-insecure-requests">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Seguridad">
+  <meta property="og:description" content="Seguridad de Legado Digital Abierto.">
+  <meta property="og:url" content="https://larry-moreno.github.io/legado-digital-abierto/documentacion/seguridad/">
+  <title>Seguridad | Legado Digital Abierto</title>
+  <link rel="canonical" href="https://larry-moreno.github.io/legado-digital-abierto/documentacion/seguridad/">
+  <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../../" aria-label="Legado Digital Abierto, inicio"><span class="brand-mark" aria-hidden="true">LD</span><span>Legado Digital Abierto</span></a>
+    <nav aria-label="Navegación principal"><a href="../../#directorio">Directorio</a><a href="../../#lista">Mi lista</a><a href="../../#metodologia">Metodología</a></nav>
+  </header>
+  <main class="content-page ">
+    <a class="back-link" href="../../">← Volver al directorio</a>
+    <h1>Seguridad</h1>
+<h2>Alcance</h2>
+<p>El sitio es estático y no procesa solicitudes ni documentos. Sus riesgos principales son enlaces oficiales sustituidos, contenido editorial incorrecto, inyección mediante datos contribuidos y dependencias futuras innecesarias.</p>
+<h2>Controles</h2>
+<ul><li>Dominios oficiales permitidos comprobados por pruebas.</li><li>Renderizado de los datos mediante <code>textContent</code>, no HTML inyectado.</li><li>Enlaces externos aislados con <code>noopener noreferrer</code>.</li><li>Política de contenido y referencia declarada en las páginas públicas.</li><li>Servidor local con prevención de traversal y cabeceras básicas.</li><li>Sin scripts de terceros, analítica, autenticación o backend.</li><li>Validación local reproducible de sintaxis, esquema, build y pruebas.</li></ul>
+<h2>Reportar un problema</h2>
+<p>Usa el [reporte privado de vulnerabilidades de GitHub](<a href="https://github.com/Larry-Moreno/legado-digital-abierto/security/advisories/new" target="_blank" rel="noopener noreferrer">https://github.com/Larry-Moreno/legado-digital-abierto/security/advisories/new</a>). No abras un issue público con un exploit, documentos personales, credenciales ni detalles de una víctima.</p>
+<p>El reporte debe describir el problema con datos ficticios. No adjuntes documentos reales ni información de una persona fallecida o de su familia.</p>
+<h2>No cubierto</h2>
+<p>El proyecto no puede resolver disputas legales, recuperar cuentas, verificar identidades ni garantizar la actuación de una plataforma.</p><p class="source-note">Documento fuente: <a href="../../SECURITY.md">SECURITY.md</a>.</p>
+  </main>
+</body>
+</html>

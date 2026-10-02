@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://larry-moreno.github.io/legado-digital-abierto/sitemap.xml
